@@ -4,6 +4,7 @@ const axios = require('axios');
 const routes = require('./routes');
 const database = require('./config/db/database');
 const app = express();
+const cors = require('cors');
 
 const startedAt = Date.now();
 
@@ -11,6 +12,10 @@ const startedAt = Date.now();
 /* app.use((req, res) => {
     res.status(httpStatus)
 }) */
+
+app.use(cors({
+  origin: 'https://pwa-exemplo.vercel.app'
+}));
 
 app.get('/status', async (req, res) => res.json ({
     uptime: Date.now() - startedAt 
