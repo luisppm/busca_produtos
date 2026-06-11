@@ -8,11 +8,6 @@ const cors = require('cors');
 
 const startedAt = Date.now();
 
-// app.use('/api', routes);
-/* app.use((req, res) => {
-    res.status(httpStatus)
-}) */
-
 app.use(cors({
   origin: 'https://pwa-exemplo.vercel.app'
 }));

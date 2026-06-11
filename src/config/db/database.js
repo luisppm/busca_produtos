@@ -1,6 +1,11 @@
 const dotenv = require('dotenv').config();
 const mysql = require('mysql2');
 
+console.log(process.env.DB_HOST);
+console.log(process.env.DB_DATABASE);
+console.log(process.env.DB_USER);
+console.log(process.env.DB_PORT);
+
 const dbConfig = {
   host:  process.env.DB_HOST,
   database: process.env.DB_DATABASE, 
