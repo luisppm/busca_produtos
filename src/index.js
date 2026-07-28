@@ -8,8 +8,23 @@ const cors = require('cors');
 
 const startedAt = Date.now();
 
+const allowedOrigins = [
+  "http://localhost:5173",      // React/Vite local
+  "https://pwa-exemplo.vercel.app"      // Front-end em produção
+];
+
 app.use(cors({
-  origin: 'https://pwa-exemplo.vercel.app'
+    origin: function (origin, callback) {
+        // Permite requisições sem Origin (Postman, Insomnia)
+         if (!origin) return callback(null, true);
+
+        if (allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Não permitido por CORS"));
+        }
+    },
+    credentials: true
 }));
 
 app.get('/status', async (req, res) => res.json ({
