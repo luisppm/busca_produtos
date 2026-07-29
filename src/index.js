@@ -10,6 +10,7 @@ const startedAt = Date.now();
 
 const allowedOrigins = [
   "http://localhost:5173",      // React/Vite local
+  "https://localhost:5173",
   "https://pwa-exemplo.vercel.app"      // Front-end em produção
 ];
 
