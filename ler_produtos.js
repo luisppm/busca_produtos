@@ -1,4 +1,4 @@
-const puppeteer =  require("puppeteer");
+// const puppeteer =  require("puppeteer");
 
 async function lerProdutos() {
     console.log('inicios leitura');
